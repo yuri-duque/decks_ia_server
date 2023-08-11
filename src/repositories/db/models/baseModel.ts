@@ -1,18 +1,6 @@
 import mongoose from "mongoose";
 import { connect } from "../config";
 
-export class BaseClass {
-  _id?: string;
-  createdAt?: Date;
-  updatedAt?: Date;
-
-  constructor({ _id, createdAt, updatedAt }: BaseClass) {
-    this._id = _id;
-    this.createdAt = createdAt;
-    this.updatedAt = updatedAt;
-  }
-}
-
 export class BaseModel<T> {
   _db!: typeof mongoose;
 
