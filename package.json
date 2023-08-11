@@ -13,10 +13,7 @@
     "lint:fix": "eslint src/**/*.ts --fix"
   },
   "pre-commit": [
-    "lint",
-    "build",
-    "swagger",
-    "swagger:commit"
+    "lint"
   ],
   "dependencies": {
     "@types/mongoose": "^5.11.97",
