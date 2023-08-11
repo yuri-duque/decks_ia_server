@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import CustomError from "../utils/customError";
+import CustomError from "../../utils/customError";
 
 export async function connect() {
   try {
