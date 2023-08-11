@@ -7,8 +7,10 @@ const router = Router();
 
 router.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
-router.get("/api/health", (request: Request, response: Response) => {
-  response.status(200).send("OK");
+router.get("/api/health", async (req: Request, res: Response) => {
+  // #swagger.tags = ['Default']
+
+  res.status(200).send("OK");
 });
 
 export default router;
