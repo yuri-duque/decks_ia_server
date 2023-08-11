@@ -1,16 +1,17 @@
 import { Request, Response, Router } from "express";
-import LoginService from "../services/loginService";
+import AuthService from "../services/authService";
+import { auth } from "../middlewares/authMiddleware";
 
 const router = Router();
-const loginService = new LoginService();
+const authService = new AuthService();
 
-router.post("/login", async (req: Request, res: Response) => {
+router.post("/login", auth, async (req: Request, res: Response) => {
   try {
     // #swagger.tags = ['Login']
 
     const { email, password } = req.body;
 
-    loginService.login({ email, password });
+    authService.login({ email, password });
 
     res.status(200).send("OK");
   } catch (error) {

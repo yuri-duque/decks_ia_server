@@ -1,10 +1,11 @@
 import { Request, Response, Router } from "express";
 import UserService from "../services/userService";
+import { auth } from "../middlewares/authMiddleware";
 
 const router = Router();
 const userService = new UserService();
 
-router.post("/user", async (req: Request, res: Response) => {
+router.post("/user", auth, async (req: Request, res: Response) => {
   try {
     // #swagger.tags = ['User']
 
